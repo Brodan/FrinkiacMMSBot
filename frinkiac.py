@@ -1,10 +1,11 @@
 import schedule
 import requests
+import os
 from twilio.rest import TwilioRestClient
 from twilio import TwilioRestException
 
-account_sid = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' # Your Account SID from www.twilio.com/console
-auth_token  = 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY'  # Your Auth Token from www.twilio.com/console
+account_sid = os.environ['TWILIO_ACCOUNT_SID'] # Your Account SID from www.twilio.com/console
+auth_token  = os.environ['TWILIO_AUTH_TOKEN']  # Your Auth Token from www.twilio.com/console
 client = TwilioRestClient(account_sid, auth_token)
 
 def get_quote():
@@ -27,8 +28,8 @@ def send_MMS():
         message = client.messages.create(
             body=body,
             media_url=media,
-            to="+12345678901",    # Replace with your phone number
-            from_="+12345678901") # Replace with your Twilio number
+            to=os.environ['PHONE_NUMBER'],    # Replace with your phone number
+            from_=os.environ['TWILIO_NUMBER']) # Replace with your Twilio number
         print("Message sent!")
     # If an error occurs, print it out.
     except TwilioRestException as e:

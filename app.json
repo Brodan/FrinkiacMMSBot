@@ -1,0 +1,28 @@
+{
+  "name": "FrinkiacMMSBot",
+  "description": "A Twilio powered bot for sending Simpson's screenshots.",
+  "repository": "https://github.com/brodan/FrinkiacMMSBot",
+  "keywords": ["frinkiac", "twilio", "MMS", "python"],
+  "env": {
+    "TWILIO_ACCOUNT_SID": {
+      "description": "Your Twilio Account SID from www.twilio.com/console.",
+      "value": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "required": true
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "description": "Your Twilio Auth Token from www.twilio.com/console.",
+      "value": "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
+      "required": true
+    },
+    "TWILIO_NUMBER": {
+      "description": "A Twilio phone number you own.",
+      "value": "+15555555555",
+      "required": true
+    },
+    "PHONE_NUMBER": {
+      "description": "The phone number you would like to send your messages to.",
+      "value": "+15555555555",
+      "required": true
+    }
+  }
+}
